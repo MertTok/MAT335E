@@ -21,7 +21,7 @@ public class Employee {
 
     public void setWorkingYear(int workingYear){
         this.workingYear = workingYear;
-        if(workingYear > 20) this.retiring();
+        this.retiring();
     }
 
     public boolean getIsRetired(){
@@ -51,7 +51,8 @@ public class Employee {
     }
 
     public void retiring(){
-        setIsRetired(true);
+        if(workingYear > 20) setIsRetired(true);
+        else setIsRetired(false);
     }
     // Ends here
 }

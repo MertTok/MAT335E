@@ -9,25 +9,23 @@ public class Question1 {
 
         int input1, input2, input3;
 
-        System.out.printf("Enter the first value: ");
+        System.out.print("Enter the first value: ");
         input1 = input.nextInt();
-        System.out.printf("Enter the second value: ");
+        System.out.print("Enter the second value: ");
         input2 = input.nextInt();
-        System.out.printf("Enter the third value: ");
+        System.out.print("Enter the third value: ");
         input3 = input.nextInt();
 
-        if(hasMidpoint(input1, input2, input3)) System.out.printf("\nThe sets of points include a middle point.");
-        else System.out.printf("\nThe sets of points does not include a middle point.");
+        if(hasMidpoint(input1, input2, input3)) System.out.print("\nThe sets of points include a middle point.");
+        else System.out.print("\nThe sets of points does not include a middle point.");
     }
 
     public static boolean hasMidpoint(int p1, int p2, int p3)
     {
-        int biggest = Math.max(p1, Math.max(p2, p3));
-        int smallest = Math.min(p1, Math.min(p2, p3));
+        double biggest = Math.max(p1, Math.max(p2, p3));
+        double smallest = Math.min(p1, Math.min(p2, p3));
+        double midpoint = (biggest + smallest) / 2;
 
-        if(p1 != biggest && p1 != smallest && p1 == (biggest+smallest)/2) return true;
-        if(p2 != biggest && p2 != smallest && p2 == (biggest+smallest)/2) return true;
-        if(p3 != biggest && p3 != smallest && p3 == (biggest+smallest)/2) return true;
-        return false;
+        return (p1 == midpoint || p2 == midpoint || p3 == midpoint);
     }
 }
