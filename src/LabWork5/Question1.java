@@ -5,23 +5,28 @@ public class Question1 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int start, end;
+        int start, end, sum;
 
-        System.out.println("Enter the starting value:");
+        System.out.print("Enter the starting value: ");
         start = input.nextInt();
 
-        System.out.println("Enter the final value:");
+        System.out.print("\nEnter the final value: ");
         end = input.nextInt();
 
-        System.out.println("Prime numbers between " + start + " and " + end + " are:");
-        primesBetween(start, end);
+        sum = primesBetween(start, end);
+        System.out.println("\nThe sum of prime numbers between " + start + " and " + end + " are: " + sum);
+
     }
 
-    public static void primesBetween(int start, int end){
+    public static int primesBetween(int start, int end){
+        int total = 0;
+
         for(int number = start+1; number < end; number++)
         {
-            if(isPrime(number)) System.out.println(number);
+            if(isPrime(number)) total += number;
         }
+
+        return total;
     }
 
     public static boolean isPrime(int number){
