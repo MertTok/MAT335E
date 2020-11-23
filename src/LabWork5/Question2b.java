@@ -6,16 +6,23 @@ public class Question2b {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int numberOfEntries, val, total = 0;
+        int exitCondition = -1, val, total = 0, numberOfEntries = 0;
         float harmonicAverage;
 
-        System.out.print("How many numbers will you enter?: ");
-        numberOfEntries = input.nextInt();
+        System.out.println("Enter " + exitCondition + " to exit.");
 
-        for(int i = 1; i <= numberOfEntries; i++){
+        while(true)
+        {
             System.out.print("\nEnter a value: ");
             val = input.nextInt();
+
+            if (val == exitCondition){
+                System.out.println("Exiting the program...");
+                break;
+            }
+
             total += val;
+            numberOfEntries++;
         }
 
         harmonicAverage = (float) numberOfEntries / total;
