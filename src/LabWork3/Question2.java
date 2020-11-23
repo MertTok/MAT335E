@@ -10,11 +10,11 @@ public class Question2 {
         float x1, x2, x3;
 
         System.out.print("Enter the first value: ");
-        x1 = input.nextFloat();
+        x1 = input.nextInt();
         System.out.print("Enter the second value: ");
-        x2 = input.nextFloat();
+        x2 = input.nextInt();
         System.out.print("Enter the third value: ");
-        x3 = input.nextFloat();
+        x3 = input.nextInt();
 
         System.out.print(findRoots(x1, x2, x3));
     }
