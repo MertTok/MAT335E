@@ -34,6 +34,7 @@ public class ISBN {
         if( (ISBN / Math.pow(10,10)) < 1 || (ISBN / Math.pow(10,10)) > 10 ){
             System.out.println("This ISBN value is not valid. ISBN value must be 11 digits.");
             setIsValid(false);
+            return;
         }
 
         // Check modular validity condition
