@@ -18,7 +18,7 @@ public class Question1 {
 
         // Assign a value to each piece
         for(int i = 0; i < numberOfPieces-1; i++){
-            pieces[i] = getRandomNumberBetween(10, (int) Math.floor(remainingLength * 0.8) );
+            pieces[i] = getRandomNumberBetween(1, (int) Math.floor(remainingLength * 0.8) );
             remainingLength -= pieces[i];
         }
         pieces[numberOfPieces-1] = remainingLength;
