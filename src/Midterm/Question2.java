@@ -21,7 +21,7 @@ public class Question2 {
         for(int fireCount = 0; fireCount < totalAttempts; fireCount++)
         {
 
-            int[] shotCoordinates = fire();
+            float[] shotCoordinates = fire();
 
             if( checkForHit(shotCoordinates[0], shotCoordinates[1]) )
             {
@@ -37,16 +37,16 @@ public class Question2 {
     }
 
 
-    public static int[] fire(){
+    public static float[] fire(){
         SecureRandom randomNumbers = new SecureRandom();
-        int shot_x =  randomNumbers.nextInt(area_x);
-        int shot_y = randomNumbers.nextInt(area_y);
+        float shot_x =  randomNumbers.nextFloat() * area_x;
+        float shot_y = randomNumbers.nextFloat() * area_y;
 
-        return new int[]{shot_x, shot_y};
+        return new float[]{shot_x, shot_y};
     }
 
 
-    public static boolean checkForHit(int shot_x, int shot_y){
+    public static boolean checkForHit(float shot_x, float shot_y){
         double relative_x = shot_x - center_x;
         double relative_y = shot_y - center_y;
 
